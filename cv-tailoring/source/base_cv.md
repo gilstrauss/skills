@@ -7,7 +7,7 @@ Petah Tikva, Israel · gil.strauss@me.com · +972-54-623-1694 · linkedin.com/in
 
 ## Profile
 
-I build the engineering organizations that build mission-critical systems — and I stay in the code while doing it. Over 20 years, that has meant taking a B2B SaaS platform from greenfield to hundreds of millions of daily transactions, scaling a 10-person team to 60 across five functions, and driving a six-year transformation to DORA-elite engineering performance. Today I am doing the same work in a different domain: modernizing legacy platforms and embedding AI-augmented engineering culture at the organization that powers K-12 education for over 1M Israeli students. Hands-on in the modern sense — architecture, specs, design and code review, and AI-augmented engineering with tools like Claude Code.
+I build the engineering organizations behind mission-critical systems, without ever leaving the code. Over fourteen years at one company I took a B2B SaaS platform from greenfield to hundreds of millions of daily transactions, built the group that ran it, and drove it to DORA-elite performance. In the same period I took as much as a quarter out of cloud spend while volume rose. Today I am doing the same work in a different domain: legacy modernization and culture change at an EdTech company whose products reach over 1M K-12 students in Israel. I review architecture and code, write the specs for the hard problems, and build alongside coding agents.
 
 ---
 
@@ -16,35 +16,34 @@ I build the engineering organizations that build mission-critical systems — an
 ### Chief Technology Officer · Center for Educational Technology (CET)
 **Tel Aviv · Aug 2025 – Present**
 
-Israel's leading K-12 educational technology organization, reaching over 1M students. Architect-strategist CTO with cross-functional influence across a 60-person technology organization.
+Israel's leading independent EdTech company. Architect-strategist CTO across the platform portfolio.
 
-- Shipped LLM-powered educational features (RAG, MCP) and a multi-agent code review system adopted across R&D.
-- Driving organization-wide adoption of AI-augmented engineering practices, tooling, and the measurement framework to track them.
-- Leading Azure landing-zone migration and the modernization of legacy ASP.NET platforms toward a cloud-native architecture.
+- Co-designed an LLM-based content classification and analysis pipeline, and shipped educational features built on RAG, tool use, and MCP.
+- Driving organization-wide adoption of spec-driven development and AI-augmented engineering practice, with a measurement framework to track it.
+- Setting software and cloud architecture direction, moving legacy platforms toward a cloud-native, distributed architecture on Azure.
 
 ### CTO & VP R&D · CG Solutions / Groove Technologies
-**Israel · 2012 – 2025**
-*Joined as Gamescale in 2011; promoted to CTO & VP R&D in 2012.*
+**Israel · 2011 – 2025**
+*Promoted to CTO & VP R&D in 2012.*
 
-B2B SaaS platform handling hundreds of millions of daily transactions at 99.99% availability in the regulated real-money gaming sector. Built the engineering organization from 10 to 60 people across R&D, DevOps, IT, NOC, and Product.
+B2B SaaS for the regulated real-money gaming sector, running at 99.99% availability.
 
-- **DORA-elite engineering performance** reached over six years of focused transformation, measured continuously via Haystack.
-- **Greenfield to mission-critical.** Architected and scaled the platform from zero to hundreds of millions of daily transactions on AWS (EKS, EC2, S3).
-- **Modernization at scale.** Migrated a monolithic architecture to a high-performance microservices mesh across AWS and hybrid environments.
+- **Two people to sixty.** Built it across R&D, DevOps, IT, NOC, and Product: five functions, four sites in Israel and Europe, five direct reports at peak.
+- **Six-year transformation.** DORA-elite engineering performance, measured continuously via Haystack.
+- **Greenfield to mission-critical.** Architected and scaled the platform on AWS from the first line of code, then migrated a monolithic architecture to a microservices mesh without availability impact.
+- **Cost ownership.** Owned a cloud infrastructure budget reaching USD 1.2M annually across AWS, MongoDB Atlas, and ClickHouse Cloud, and reduced it by up to 25% through sustained FinOps work.
 
 ### Earlier Roles
 
-Software Team Leader, DoubleVerify · 2010–2011 · Software Engineer, Equitick · 2009–2010 · Team Leader, Microsoft Israel · 2008–2009
+Software Team Leader, DoubleVerify · 2010–2011 · Software Engineer, Equitick · 2009–2010 · Team Leader, Microsoft Israel · 2008–2009 · Software Engineer, Oasis Capital Management · 2005–2008 · Team Leader, SeaPass Solutions · 2002–2004
 
 ---
 
 ## Technical Skills
 
-**Engineering & Architecture:** Distributed systems · Microservices · Event-driven design · High-volume scalability · DDD · DORA · CI/CD · AI-augmented SDLC · FinOps
+**Architecture & Platform:** Distributed systems · Microservices · Event-driven design · High-volume scalability · DDD · DORA · CI/CD · AI-augmented SDLC · FinOps
 
-**Cloud & Data:** AWS (primary) · Azure · Kubernetes · Terraform · MongoDB · Redis · MySQL · ClickHouse · Kafka · Kinesis
-
-**Languages & AI:** Python · Go · C# · Java · LLM integration · RAG · MCP · Claude Code
+**Cloud, Data & AI:** AWS · Azure · Kubernetes · Terraform · Kafka · ClickHouse · MongoDB · Agentic systems · LLM integration · RAG · MCP · Coding agents · Python · Go · C#
 
 ---
 

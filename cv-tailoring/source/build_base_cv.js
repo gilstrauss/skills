@@ -20,16 +20,18 @@ const {
 
 // ---------- style constants ----------
 
-const DARK = "1A1A1A";
-const ACCENT = "2E5C8A";  // slate-blue
-const MUTED = "555555";
-const FONT = "Calibri";
+const DARK = "161616";
+const ACCENT = "161616";  // monochrome by design: no brand colour, no rules or bars
+const MUTED = "5A5A5A";
+const FONT = "Helvetica Neue";   // ships with macOS; embedded in the PDF. Avoid Calibri/Aptos (template look).
+const FONT_HEAD = FONT;
+const HEAD_BOLD = true;
 
-const SIZE_BODY = 21;       // 10.5pt
-const SIZE_ROLE = 23;       // 11.5pt
-const SIZE_SECTION = 22;    // 11pt
-const SIZE_NAME = 40;       // 20pt
-const SIZE_TITLE = 24;      // 12pt
+const SIZE_BODY = 20;       // 10pt
+const SIZE_ROLE = 22;       // 11pt — matches SIZE_BODY-adjacent date/location run on the same line; keep these two in sync (see role-header Paragraph below)
+const SIZE_SECTION = 26;    // 13pt
+const SIZE_NAME = 48;       // 24pt
+const SIZE_TITLE = 22;      // 11pt
 const SIZE_CONTACT = 20;    // 10pt
 
 // ---------- markdown parsing ----------
@@ -177,7 +179,7 @@ function inlineRuns(text, baseOpts = {}) {
   let lastIndex = 0, m;
   while ((m = re.exec(text)) !== null) {
     if (m.index > lastIndex) runs.push(new TextRun({ text: text.slice(lastIndex, m.index), ...baseOpts }));
-    if (m[1] !== undefined) runs.push(new TextRun({ text: m[1], bold: true, ...baseOpts }));
+    if (m[1] !== undefined) runs.push(new TextRun({ text: m[1], ...baseOpts, font: FONT_HEAD, bold: HEAD_BOLD }));
     else                    runs.push(new TextRun({ text: m[2], italics: true, ...baseOpts }));
     lastIndex = re.lastIndex;
   }
@@ -190,12 +192,11 @@ const baseRun = (opts = {}) => ({ font: FONT, size: SIZE_BODY, color: DARK, ...o
 // ---------- docx element helpers ----------
 
 const sectionHeader = (label) => new Paragraph({
-  spacing: { before: 140, after: 40 },
-  border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: ACCENT, space: 2 } },
+  spacing: { before: 200, after: 60 },
   children: [
     new TextRun({
-      text: label.toUpperCase(), bold: true, color: ACCENT,
-      size: SIZE_SECTION, font: FONT, characterSpacing: 40,
+      text: label, color: DARK,
+      size: SIZE_SECTION, font: FONT_HEAD, bold: HEAD_BOLD,
     }),
   ],
 });
@@ -213,16 +214,16 @@ function buildDocument(cv) {
 
   children.push(new Paragraph({
     spacing: { before: 0, after: 0 },
-    children: [new TextRun({ text: cv.name, bold: true, size: SIZE_NAME, font: FONT, color: DARK })],
+    children: [new TextRun({ text: cv.name, size: SIZE_NAME, font: FONT_HEAD, bold: HEAD_BOLD, color: ACCENT })],
   }));
 
   children.push(new Paragraph({
     spacing: { before: 40, after: 0 },
-    children: [new TextRun({ text: cv.titleLine, size: SIZE_TITLE, font: FONT, color: ACCENT, bold: true })],
+    children: [new TextRun({ text: cv.titleLine, size: SIZE_TITLE, font: FONT_HEAD, bold: HEAD_BOLD, color: DARK })],
   }));
 
   children.push(new Paragraph({
-    spacing: { before: 40, after: 0 },
+    spacing: { before: 40, after: 40 },
     children: [new TextRun({ text: cv.contactLine, color: MUTED, size: SIZE_CONTACT, font: FONT })],
   }));
 
@@ -245,12 +246,12 @@ function buildDocument(cv) {
 
       children.push(new Paragraph({
         spacing: { before: 80, after: 0 },
-        tabStops: [{ type: TabStopType.RIGHT, position: TabStopPosition.MAX }],
+        tabStops: [{ type: TabStopType.RIGHT, position: 10080 }],  // text width: 12240 page - 2 x 1080 margins
         children: [
-          new TextRun({ text: role.title, bold: true, size: SIZE_ROLE, font: FONT, color: DARK }),
-          new TextRun({ text: "  ·  " + role.company, size: SIZE_ROLE, font: FONT, color: DARK }),
+          new TextRun({ text: role.title, size: SIZE_ROLE, font: FONT_HEAD, bold: HEAD_BOLD, color: DARK }),
+          new TextRun({ text: "  |  " + role.company, size: SIZE_ROLE, font: FONT, color: DARK }),
           new TextRun({ text: "\t", size: SIZE_ROLE, font: FONT }),
-          new TextRun({ text: rightSide, color: MUTED, size: SIZE_BODY, font: FONT }),
+          new TextRun({ text: rightSide, color: MUTED, size: SIZE_ROLE, font: FONT }),
         ],
       }));
 
@@ -274,7 +275,7 @@ function buildDocument(cv) {
     if (cv.earlierRolesLine) {
       children.push(new Paragraph({
         spacing: { before: 120, after: 20 },
-        children: [new TextRun({ text: "Earlier Roles", bold: true, size: SIZE_SECTION, color: ACCENT, font: FONT })],
+        children: [new TextRun({ text: "Earlier Roles", size: SIZE_ROLE, color: DARK, font: FONT_HEAD, bold: HEAD_BOLD })],
       }));
       children.push(new Paragraph({
         spacing: { before: 0, after: 80 },
@@ -289,7 +290,7 @@ function buildDocument(cv) {
       children.push(new Paragraph({
         spacing: { before: 40, after: 60 },
         children: [
-          new TextRun({ text: s.label + ":  ", bold: true, size: SIZE_BODY, font: FONT, color: DARK }),
+          new TextRun({ text: s.label + ":  ", size: SIZE_BODY, font: FONT_HEAD, bold: HEAD_BOLD, color: DARK }),
           new TextRun({ text: s.items, size: SIZE_BODY, font: FONT, color: DARK }),
         ],
       }));

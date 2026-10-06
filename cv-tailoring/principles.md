@@ -4,7 +4,7 @@ These principles govern every tailored CV, cover letter, and LinkedIn update. Re
 
 ## Voice and Tone
 
-1. **First-person in the summary; third-person in the bullets.** The base CV opens with "I build the engineering organizations that build mission-critical systems — and I stay in the code while doing it." This is intentional. Keep it. Bullets stay in clean executive register.
+1. **First-person in the summary; third-person in the bullets.** The base CV opens with "I build the engineering organizations behind mission-critical systems, without ever leaving the code." *(Reworded 2026-10-06: the earlier "organizations that build mission-critical systems" repeated "build", and the em-dash is gone.)* This is intentional. Keep it. Bullets stay in clean executive register.
 
 2. **Distinctive but dignified.** The CV should stand out without being clever for its own sake. No emoji. No marketing copy. No exclamation marks. No "Highly experienced" or "Proven track record."
 
@@ -16,7 +16,9 @@ Most CTOs claim to be hands-on. Few are. Gil is — but in the modern sense. Fra
 - Architecture and system design
 - Specifications and spec-driven development
 - Design and code review
-- Daily work with Claude Code and AI-augmented engineering
+- Building alongside coding agents and AI-augmented engineering
+
+**No frequency words, no single tool name** *(Gil, 2026-10-02)*. Don't write "weekly", "daily" or any other cadence for hands-on work; it invites the same challenge as a percentage. Don't name Claude Code (or any one assistant) as the hands-on tool: Gil works across Claude Code, Codex, Cursor and others, so use the general term, "coding agents". Naming specific tools is fine in conversation when asked.
 - Engagement with engineers on hard technical decisions
 
 **Do not** quantify hands-on time with percentages. "50% hands-on" invites overclaim challenges; "in the modern sense" sets the right frame.
@@ -25,7 +27,7 @@ Most CTOs claim to be hands-on. Few are. Gil is — but in the modern sense. Fra
 
 These are the four claims that anchor everything. Every tailored version must serve them:
 
-1. **Built a 60-person engineering organization from scratch over 13 years.**
+1. **Built a 60-person engineering organization from scratch over 14 years.**
 2. **Drove that organization to DORA-elite engineering performance** measured continuously via Haystack.
 3. **Currently embedding AI-augmented engineering culture** at Israel's leading K-12 ed-tech organization.
 4. **Hands-on in the modern sense** — architecture, specs, design and code review, AI-augmented engineering.
@@ -40,9 +42,11 @@ Underlying theme: **operating at the connection points** — between domain expe
 - ".NET Core" (not ".NET" alone, and never "C# Core")
 - "Regulated real-money gaming sector" (when referring to CG Solutions' industry)
 - "Architect-strategist CTO" (when describing the CET role specifically)
-- "Israel's leading K-12 educational technology organization" (when describing CET)
+- **"Center for Educational Technology", never "CET" alone, in anything an outside reader sees** *(Gil, 2026-10-06)*: cover letters, outreach, and LinkedIn messages. "CET" is an internal term. The CV role header already carries the full name with "(CET)" after it, and that form is fine.
+- "Israel's leading independent EdTech company" (when describing CET — avoid "educational technology organization," which reads as a government/ministry body)
 - "Hands-on in the modern sense" (the framing phrase)
 - "Promoted to CTO & VP R&D in 2012" (the CG promotion phrasing)
+- **Money figures in USD, never NIS** *(rule set 2026-09-03)*. USD is the default unit in tech and it travels to foreign and offshore readers; a NIS figure fails to land as scale. Convert **rounding down** so the claim holds at any exchange rate — "roughly USD 6M," not "USD 6.5M."
 
 ### Never
 - "Highly experienced" or any generic opener
@@ -65,12 +69,26 @@ Underlying theme: **operating at the connection points** — between domain expe
 - **Maximum: 1.5 pages.** Only if the target role genuinely needs more detail.
 - **Never 2+ pages.** Senior CV bloat is a credibility hit.
 
+### Balance, not just brevity
+
+One page is the right length, but length and balance are different problems. Watch the *distribution* of bullets across roles:
+
+- **Weight the anchor role.** CG Solutions (14 years) is where the proof lives — greenfield-to-scale, DORA-elite, five-function org, regulated real-money platform, multi-site teams, monolith-to-microservices. It should carry more bullets than a short-tenure role. Giving a 9-month role (CET) the same bullet count as the 14-year anchor reads as imbalance to senior readers.
+- **Default split:** CG 3–4 bullets, CET 2–3. When a JD is broad (e.g. a CTO role spanning org-building + architecture + product), prefer giving CG the fourth bullet over padding CET.
+- **A broad C-level JD can justify more, and ~1.25 pages is acceptable when it does.** *(Set 2026-09-03 on the Worldcom Finance CTO CV, which Gil reviewed at ~1.25 pages and approved.)* That JD listed seven distinct responsibility areas — executive strategy, cross-functional bridging, org scale, delivery governance, architecture, product/innovation, and security/risk — and the CV ran six CG bullets, one answering each. **The test is not bullet count, it is whether every bullet is doing distinct work against the JD.** Six bullets each answering a different stated responsibility is balance; six bullets restating the same claim is bloat. When the count is deliberate, record it in the dossier's role table so a later pass doesn't trim it back on the one-page rule alone.
+- **Concise ≠ thin.** Cutting an irrelevant bullet is good editing; leaving the strongest role under-represented to hit a length target is not. Trim weak content, not load-bearing content.
+
 ## Visual Style
 
-- **Section dividers:** Slate-blue (#2E5C8A) horizontal rules under uppercase section headers.
-- **Role headers:** Title in bold, company name in normal weight, location and dates right-aligned in muted gray.
-- **CG Solutions bullets:** Use bold lead-ins ("DORA-elite engineering performance," "Greenfield to mission-critical," "Modernization at scale") for visual rhythm.
-- **CET bullets:** Plain (no bold lead-ins) — the contrast with CG signals freshness vs. depth.
+*(Redesigned 2026-10-06. Gil, reviewing candidates' CVs at CET, found many with the exact look the old design used: Calibri, slate-blue uppercase letter-spaced headings with rules under them. He rejected a Garamond small-caps version as reading like a lawyer's CV, a colour accent, and vertical bars beside headings. The approved look is below. Do not reintroduce any of those elements.)*
+
+- **Font:** Helvetica Neue throughout. It ships with macOS and is embedded in the PDF; on Windows a docx falls back to Arial. Never Calibri or Aptos (the common template look).
+- **Colour:** monochrome. Near-black (#161616) text, grey (#5A5A5A) for the contact line, dates and earlier roles. No accent colour.
+- **Headings:** sentence case, bold, 13pt. No rules, no bars, no uppercase letter-spacing.
+- **Header:** name in bold at 24pt, left-aligned, the title line in bold beneath it, contact line in grey.
+- **Role headers:** title in bold, then "  |  " and the company in regular weight, location and dates right-aligned at the margin in grey.
+- **CG Solutions bullets:** bold lead-ins ("Two people to sixty.") for visual rhythm. **CET bullets:** plain, to signal freshness against depth.
+- **Cover letters:** built with `source/build_cover_letter.js` in the same design, header read from `base_cv.md`.
 - **No headshots, no graphic flourishes, no two-column layouts.**
 
 ## The DORA Claim — How to Handle It

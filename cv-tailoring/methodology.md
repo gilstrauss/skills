@@ -2,6 +2,39 @@
 
 The process for producing a tailored CV from the base CV + master document, given a specific job description.
 
+## Knowledge architecture — evergreen vs. application-specific
+
+Two tiers. Keep them separate; never conflate. This is a standing rule.
+
+**Tier 1 — Evergreen (lives in the skill, reused for every application).**
+`master_cv.md`, `base_cv.md`, `principles.md`, this `methodology.md`, and
+`interview_prep.md`. Interview answers here are *reusable templates*: the generic
+form of the answer plus a "customize per company" slot. The tenure answer ("Why
+are you looking?"), "how hands-on are you," "DORA," etc. all live here in generic
+form. Never write a company-specific detail into a Tier-1 file.
+
+**Tier 2 — Application-specific (lives in the CV working dir, one per company).**
+For each opportunity, a `<company>_dossier.md` sits alongside the tailored CV in
+`Tailored CVs/`. It holds everything specific to that JD: the fit assessment
+(strong matches + gaps), the gaps-to-manage list, the company-specific pull
+("why this role"), and the *customized* version of each interview answer (the
+company-specific closing line grafted onto the Tier-1 generic answer). The
+dossier is the entry point when that company calls; it references Tier-1 files
+for the reusable parts.
+
+Rule of thumb: if a sentence would be true for any application, it belongs in
+Tier 1. If it names the company, the JD, or this specific fit, it belongs in the
+dossier.
+
+**Sources for a position review or a new tailoring.** Work from Tier 1 only
+(`master_cv.md`, `base_cv.md`), plus `Knowledge/` for domain detail. Do not read
+other companies' tailored CVs or dossiers in `Tailored CVs/`. Each one carries
+another JD's cuts and emphasis, and older ones may predate corrections made to
+the master. The only Tier-2 file to open is the dossier for the company being
+worked on, if one exists. Exception: when Gil explicitly asks to reuse a specific
+earlier variant ("reuse the Factify framing"), read that file and nothing else
+from the folder.
+
 ## Phase 1 — Understand the JD
 
 Before changing anything, read the JD with these questions in mind:
@@ -32,7 +65,7 @@ The master document has five summary versions:
 Pick the one that best matches the JD's mandate. If none fits, *adjust* an existing one — don't write from scratch.
 
 Adjustment rules:
-- Keep the opening line ("I build the engineering organizations that build mission-critical systems...") whenever possible. It's distinctive.
+- Keep the opening line ("I build the engineering organizations behind mission-critical systems...") whenever possible. It's distinctive.
 - Adjust the *middle* of the summary to emphasize the right claim.
 - Keep the closing line ("Hands-on in the modern sense...") in nearly every variant.
 
@@ -83,13 +116,33 @@ Output sequence:
    ```
    node source/build_base_cv.js tailored_for_acme.md tailored_for_acme.docx
    ```
-5. **Recommend Gil**: open the docx in Word, sanity-check, and "Save as PDF" before sending. Final send-format is PDF.
+5. **Build the PDF** in the same step: `source/docx_to_pdf.sh tailored_for_acme.docx`. It uses Word, so the PDF keeps the docx design, and it warns when the result runs past one page. Final send-format is this PDF; never a Typora or Markdown export.
+
+## Phase 6.5 — Write the application dossier
+
+Alongside the tailored CV, create (or update) `Tailored CVs/<company>_dossier.md`
+— the Tier-2 application-specific file. Include:
+- The role facts (company, stage, title, location, JD link, headline culture ask).
+- The fit assessment: strong matches, and gaps to manage (be honest).
+- The company-specific pull ("why this role") — ask Gil if not yet known; leave a
+  clear TODO rather than inventing one.
+- Customized interview answers: the company-specific closing line grafted onto
+  the Tier-1 generic answers in `interview_prep.md` (reference them, don't copy).
+- Risks to manage in conversation (tenure, any flagged gap).
+- Artifact pointers: tailored CV path, tracker entry, CV emphasis chosen.
+
+This dossier is what gets re-opened if the company calls for an interview. Keep
+all company-specific detail here, not in the Tier-1 skill files.
 
 ## Phase 7 — Capture
 
 After Gil reviews, ask: "Anything from this tailored version that's worth saving back to the master document — a new phrasing, a new framing, a stronger version of a bullet?"
 
 If yes, append to the appropriate section of `source/master_cv.md`. The master document is meant to grow.
+
+Capture rule by tier: reusable phrasings/framings/bullets go back to Tier-1
+(`master_cv.md` / `interview_prep.md`); anything company-specific stays in the
+dossier.
 
 ---
 
